@@ -8,9 +8,13 @@ import io.netty.util.CharsetUtil;
 @ChannelHandler.Sharable
 public class EchoClientHandler extends SimpleChannelInboundHandler<ByteBuf> {
 
+//    @Override
+//    public void channelActive(ChannelHandlerContext ctx) throws Exception {
+//        ctx.writeAndFlush(Unpooled.copiedBuffer("你好，我是Client",CharsetUtil.UTF_8));
+//    }
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
-        ctx.writeAndFlush(Unpooled.copiedBuffer("你好，我是Client",CharsetUtil.UTF_8));
+        ctx.writeAndFlush(Unpooled.copiedBuffer("111\r\n222\r\n333",CharsetUtil.UTF_8));
     }
 
     @Override
